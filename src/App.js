@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import List from './components/List';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Editor from './components/Editor';
 import Quill from 'quill';
 import { Button, TextField } from '@mui/material';
 import RelatedItems from './components/RelatedItems';
 import AddSection from './components/AddSection';
+import AddContent from './components/AddContent';
 
 const Delta = Quill.import('delta');
 
@@ -17,8 +18,15 @@ function App() {
   const [sections, setSections] = useState([]);
 
   const addSectionsToTemplate = (numSections) => {
-    var newSections = new Array(numSections).fill(<Button variant='outlined' style={{width: '100%'}}>Add content</Button>);
-    setSections([...sections, newSections]);
+    const sectionIndex = sections.length;
+    var newSection = new Array(numSections).fill("empty");
+    setSections([...sections, newSection]);
+  }
+
+  const addContentToSection = (contentType, buttonXIndex, buttonYIndex) => {
+    var newContent = [... sections];
+    newContent[buttonYIndex][buttonXIndex] = contentType
+    setSections(newContent);
   }
 
   // Use a ref to access the quill instance directly
@@ -42,7 +50,7 @@ function App() {
         onTextChange={setLastChange}
       />
       <AddSection addSectionsToTemplate={addSectionsToTemplate}/>
-      <List sections={sections} setSections={setSections}/>
+      <List sections={sections} setSections={setSections} addContentToSection={addContentToSection}/>
       <RelatedItems/>
     </div>
   );
