@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import AddContent from "./AddContent";
 import Editor from "./Editor";
 import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
+import CloseIcon from '@mui/icons-material/Close';
 
 function List({sections, setSections, addContentToSection}) {
 
@@ -39,7 +40,9 @@ function List({sections, setSections, addContentToSection}) {
       {sections.map((item, sectionIndex) => (
         <Reorder.Item className="item-container" key={item} value={item}>
           <span id="item-content">
+            <DragIndicatorIcon style={{cursor: 'grab'}} />
             {item.map((content, index) => (getContent(content, sectionIndex, index)))}
+            <CloseIcon />
           </span>
         </Reorder.Item>
       ))}
