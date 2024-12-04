@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Template Widget Prototype
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a prototype front-end design for a rich text editor and widget adder that allows users to create a structured template layout. Users can easily add, reorder, and customize widgets, which can include images, embedded code, or rich text editors. The application utilizes **Framer Motion** for smooth animations, **Quill** for rich text editing, and **Material UI** for a visually appealing and responsive design.
 
-## Available Scripts
+## Features
+- **Structured Template Layout**: Users can set up a structured layout where widgets can be added and arranged.
+- **Widget Types**: Add various types of widgets, including:
+  - **Images**: Insert images into your layout.
+  - **Embedded Code**: Integrate code snippets or external content.
+  - **Rich Text Editor**: Utilize Quill for rich text editing within the template.
+- **Reorder Functionality**: Drag and drop to reorder widgets seamlessly using Framer Motion's Reorder feature.
+- **Material UI**: A responsive and modern design framework that enhances the overall user experience.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+To set up the project locally, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
+   ```git clone https://github.com/jrpohlman116/initiative-business-case.git```
+2. Install dependencies: 
+    ```npm install```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
+To run the app, execute the following command:
+```npm start```
+Then, open your browser and go to http://localhost:3000 to start creating your structured layouts with widgets.
 
-### `npm test`
+## Libraries Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Framer Motion**: A popular library for animations in React, utilized for creating smooth reorder animations.
+- **Quill**: A powerful rich text editor providing extensive formatting options for text.
+- **Material UI**: A comprehensive library of React components that implement Google's Material Design, ensuring a modern and responsive UI.
 
-### `npm run build`
+## Contributing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Contributions are welcome! If you have suggestions for improvements or encounter any issues, please feel free to submit a pull request or open an issue in the repository.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Acknowledgments
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Special thanks to the developers of [Framer Motion](https://www.framer.com/motion/), [Quill](https://quilljs.com/), and [Material UI](https://mui.com/) for their incredible libraries that made this project possible.
