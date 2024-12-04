@@ -5,7 +5,6 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Card, CardContent, Chip } from '@mui/material';
-import CircularProgress from '@mui/material/CircularProgress';
 
 function RelatedItems() {
     return (
