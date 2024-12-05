@@ -9,7 +9,7 @@ import RelatedItems from './components/RelatedItems';
 import AddSection from './components/AddSection';
 import { createTheme } from '@mui/material/styles';
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { createBusinessCasePrompt } from './prompts';
+import { createBusinessCasePrompt, schema } from './prompts';
 
 const Delta = Quill.import('delta');
 const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
@@ -49,21 +49,22 @@ function App() {
 
   async function aiRun() {
     const model = genAI.getGenerativeModel({
-      model: "gemini-pro",
+      model: "gemini-1.5-pro",
       generationConfig: {
         temperature: 1.0,
+        responseMimeType: "application/json",
+        responseSchema: schema,
       },
     });
     const prompt = createBusinessCasePrompt;
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const content = text.split(/```json/i);
-    var filtered = content.filter(function (el) {
-      return el != "";
+    var json = JSON.parse(text);
+    json.map((item) => {
+      item['insert'] += "\n";
     });
-    const json = JSON.parse(filtered[0].replace("```", ""));
-    quillRef.current.setContents(json['ops']);
+    quillRef.current.setContents(json);
   }
 
   const addSectionsToTemplate = (numSections) => {
